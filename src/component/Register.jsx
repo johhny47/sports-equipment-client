@@ -1,7 +1,45 @@
+
+import { useContext, useEffect, useState } from "react";
+import { authContext } from "./AuthProvider/AuthProvider";
 import { Link } from "react-router-dom";
 
 
+
 const Register = () => {
+    const {handleRegister,mannageProfile}=useContext(authContext)
+    const [error,setError]=useState("")
+   
+    const handleSubmit =(e)=>
+    {
+        e.preventDefault();
+       
+        const name = e.target.name.value
+        const email = e.target.email.value
+        const password = e.target.password.value
+        const photoURL =  e.target.photourl.value
+        handleRegister(email,password)
+        .then(res=>{
+            console.log(name,photoURL)
+        })
+       
+        console.log(name,email,password)
+        if(password.length < 6){
+            setError("password must contain at least 6 charcter")
+            return;
+       }
+        if(!/[a-z]/.test(password)){
+            setError("password must contain at least one lowercase")
+            return;
+       }
+        if(!/[A-Z]/.test(password)){
+            setError("password must contain at least one upperrcase")
+             return;
+        }
+      }
+    useEffect(()=>{
+      document.title = "Sports | Register"
+     },[])
+     
     return (
         <div className="hero bg-base-200 min-h-screen ">
         <div className="hero-content flex-col ">
@@ -10,7 +48,7 @@ const Register = () => {
             
           </div>
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-            <form  className="card-body">
+            <form onSubmit={handleSubmit}  className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>
@@ -42,13 +80,13 @@ const Register = () => {
               </div>
               <p>Already have account? please <Link to="/login"><span className="text-blue-700">Login</span></Link> </p>
             </form>
-           
+            {error && <p className="text-red-500">{error}</p>}
           
           </div>
          
         </div>
       </div>
     );
-};
+  };
 
 export default Register;

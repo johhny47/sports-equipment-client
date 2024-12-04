@@ -20,6 +20,7 @@ const Register = () => {
         const photoURL =  e.target.photourl.value
         handleRegister(email,password)
         .then(res=>{
+          mannageProfile(name,photoURL)
           Swal.fire({
             title: 'Successful!',
             text: 'Successfully logged in',

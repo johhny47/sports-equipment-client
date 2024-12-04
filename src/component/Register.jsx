@@ -2,6 +2,7 @@
 import { useContext, useEffect, useState } from "react";
 import { authContext } from "./AuthProvider/AuthProvider";
 import { Link } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 
 
@@ -19,7 +20,12 @@ const Register = () => {
         const photoURL =  e.target.photourl.value
         handleRegister(email,password)
         .then(res=>{
-            console.log(name,photoURL)
+          Swal.fire({
+            title: 'Successful!',
+            text: 'Successfully logged in',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+          })
         })
        
         console.log(name,email,password)

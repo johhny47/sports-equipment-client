@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { authContext } from "./AuthProvider/AuthProvider";
+import Swal from 'sweetalert2'
+
 
 
 
@@ -13,10 +15,21 @@ const Login = () => {
         const password = e.target.password.value
         handleLogin(email,password)
         .then(res=>{
-          console.log("login suscces");
+          Swal.fire({
+            title: 'Successful!',
+            text: 'Successfully logged in',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+          })
         })
         .catch(err=>
-        setError(err.message)
+       
+        Swal.fire({
+          title: 'Error!',
+          text: `Do you want to continue ${err.message}`,
+          icon: 'error',
+          confirmButtonText: 'Cool'
+        })
         )
      
        
@@ -53,7 +66,7 @@ const Login = () => {
                 <button className="btn btn-primary">Login</button>
                 <button onClick={handleGoogleLogin} className="btn  mt-2"> <div className='flex'  >Login with Google</div></button>
               </div>
-              <p>Already have account? please <Link to="/login"><span className="text-blue-700">Login</span></Link> </p>
+              <p>Already have account? please <Link to="/register"><span className="text-blue-700">Register</span></Link> </p>
             </form>
            
           

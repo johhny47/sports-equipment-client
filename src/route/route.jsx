@@ -6,6 +6,9 @@ import Login from "../component/Login";
 import AddEquipment from "../page/AddEquipment";
 import MyEquipment from "../page/MyEquipment";
 import AllSportsEquipment from "../page/AllSportsEquipment";
+import Details from "../component/Details";
+import Update from './../component/Update';
+import PrivateRoute from "../component/PrivateRoute/PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -28,16 +31,30 @@ const router = createBrowserRouter([
             },
             {
                 path:"/addequipment",
-                element:<AddEquipment></AddEquipment>
+                element:<PrivateRoute><AddEquipment></AddEquipment></PrivateRoute>
             },
             {
                 path:"/myequipment",
-                element:<MyEquipment></MyEquipment>
+                element:<PrivateRoute><MyEquipment></MyEquipment></PrivateRoute>,
+                
+               
+
             },
             {
                 path:"/allsportsequipment",
                 element:<AllSportsEquipment></AllSportsEquipment>,
                 loader: ()=>fetch("http://localhost:5000/equipments")
+            },
+            {
+                path:"/details/:id",
+                element:<PrivateRoute><Details></Details></PrivateRoute>,
+                loader: ({params})=>fetch(`http://localhost:5000/equipments/details/${params.id}`)
+            },
+            {
+                path:"/update/:id",
+                element:<PrivateRoute><Update></Update></PrivateRoute>,
+                loader: ({params})=>fetch(`http://localhost:5000/equipments/update/${params.id}`)
+               
             }
            
         ]

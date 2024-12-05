@@ -6,6 +6,8 @@ import { authContext } from "../AuthProvider/AuthProvider";
 const Navbar = () => {
   const {user,handleLogout} =useContext(authContext)
  
+ 
+ 
     return (
         <div className="navbar bg-base-100">
         <div className="navbar-start">
@@ -31,7 +33,9 @@ const Navbar = () => {
              <NavLink to="/allsportsequipment"><li><a>All Sports Equipment</a></li></NavLink>
              {
               user && <div>
+               
                  <NavLink to="/addequipment"><li><a>Add Equipment</a></li></NavLink>
+                 <NavLink to="/myequipment"><li><a>My Equipment</a></li></NavLink>
               </div>
              }
             </ul>
@@ -45,6 +49,7 @@ const Navbar = () => {
               <NavLink to="/allsportsequipment"><li><a>All Sports Equipment</a></li></NavLink>
              {
               user && <div className="flex gap-2">
+                {/* <NavLink to={`/details/${data._id}`}><li><a>View Details</a></li></NavLink> */}
                  <NavLink to="/addequipment"><li><a>Add Equipment</a></li></NavLink>
                  <NavLink to="/myequipment"><li><a>My Equipment</a></li></NavLink>
               </div>

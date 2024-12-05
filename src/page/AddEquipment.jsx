@@ -1,17 +1,15 @@
-
+import { useContext, useState } from 'react';
+import Swal from 'sweetalert2'
+import { authContext } from '../component/AuthProvider/AuthProvider';
 
 const AddEquipment = () => {
-
-//     Image, 
-// Item Name, 
-// Category Name,
-// Description, 
-// Price, 
-// Rating, 
-// Customization (bat with extra grip, hit paper etc), 
-// Processing Time (delivery time), 
-// Stock Status (available product quantity), 
-const handleAddEquipment = e =>{
+   
+    const {user}= useContext(authContext)
+   
+  
+const handleAddEquipment = (e) =>{
+   
+    
     e.preventDefault();
     const form = e.target;
     const name = form.name.value
@@ -23,10 +21,33 @@ const handleAddEquipment = e =>{
     const image = form.image.value
     const stockStatus = form.stock.value
     const description = form.description.value
+ 
+    const userEmail=user?.email
+      
+ 
+   const allEquipment = {name,category,price,rating,customization,processingTime,image,stockStatus,description,userEmail}
    
-   
-   
-    console.log(name,category,price,rating,customization,processingTime,image,stockStatus,description)
+    console.log(allEquipment)
+    
+    fetch('http://localhost:5000/equipments',{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(allEquipment)
+    })
+    .then(res => res.json())
+    .then(data => {
+     
+        if(data.insertedId){
+            Swal.fire({
+                title: 'Success',
+                text: 'User Added Successfuly',
+                icon: 'Success',
+                confirmButtonText: 'ok'
+              })
+        }
+    })
  
 }
 

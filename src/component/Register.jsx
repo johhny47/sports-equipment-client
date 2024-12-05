@@ -20,6 +20,17 @@ const Register = () => {
         const photoURL =  e.target.photourl.value
         handleRegister(email,password)
         .then(res=>{
+          const user={name,email}
+          fetch('http://localhost:5000/user',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)})
           mannageProfile(name,photoURL)
           Swal.fire({
             title: 'Successful!',

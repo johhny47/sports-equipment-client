@@ -145,7 +145,7 @@ const handleAddEquipment = (e) =>{
              </div>
            
 
-            <input type="submit" value="Add Coffee" className="btn btn-block" />
+            <input type="submit" value="Add" className="btn btn-block" />
           
         </form>
 

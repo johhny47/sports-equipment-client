@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import Categories from "../component/Categories";
 import Product from "../component/Product";
 
@@ -20,7 +21,7 @@ const Home = () => {
           </div>
              {/* cart */}
              <div className="w-3/4 ">
-             
+             <Outlet></Outlet>
             </div>
          </div>
           </div>

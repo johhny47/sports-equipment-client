@@ -24,7 +24,7 @@ const Update = () => {
      
        const allEquipment = {name,category,price,rating,customization,processingTime,image,stockStatus,description}
        
-        console.log(allEquipment)
+       
         
         fetch(`http://localhost:5000/equipments/${data._id}`,{
             method: 'PUT',
@@ -144,7 +144,7 @@ const Update = () => {
              </div>
            
 
-            <input type="submit" value="Update Coffee" className="btn btn-block" />
+            <input type="submit" value="Update" className="btn btn-block" />
           
         </form>
 

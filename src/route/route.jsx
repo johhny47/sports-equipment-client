@@ -13,6 +13,7 @@ import Product from "../component/Product";
 import AllEquipmetsData from "../component/AllEquipmetsData";
 import AllEquipmentsSortData from "../component/AllEquipmentsSortData";
 import Categories from "../component/Categories";
+import Category from "../component/Category";
 
 
 const router = createBrowserRouter([
@@ -23,6 +24,14 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element:<Home></Home>,
+                children:[
+                    {
+                        path:"equipments/category/:category",
+                        element:<Category></Category> ,
+                       
+                       
+                    }
+                ]
                 
             },
             {
@@ -35,6 +44,7 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element:<Categories></Categories>,
+               
                
                 
             },

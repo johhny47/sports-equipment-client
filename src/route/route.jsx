@@ -12,6 +12,7 @@ import PrivateRoute from "../component/PrivateRoute/PrivateRoute";
 import Product from "../component/Product";
 import AllEquipmetsData from "../component/AllEquipmetsData";
 import AllEquipmentsSortData from "../component/AllEquipmentsSortData";
+import Categories from "../component/Categories";
 
 
 const router = createBrowserRouter([
@@ -28,6 +29,12 @@ const router = createBrowserRouter([
                 path: "/",
                 element:<Product></Product>,
                 loader:()=>fetch("http://localhost:5000/equipments/limit")
+               
+                
+            },
+            {
+                path: "/",
+                element:<Categories></Categories>,
                
                 
             },

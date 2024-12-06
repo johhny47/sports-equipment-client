@@ -11,9 +11,9 @@ const Home = () => {
             <h1>home</h1>
             <Product></Product>
             <div>
-         <h1 className="text-4xl font-bold text-center my-11 ">Explore Cutting-Edge Gadgets</h1>
-         <div className="flex ">
-          <div className="w-1/4  ">
+         <h1 className="text-4xl font-bold text-center my-11 ">Category</h1>
+         <div className="flex">
+          <div className="w-1/4">
             {/* sidebar */}
             <div >
             <Categories></Categories>

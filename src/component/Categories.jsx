@@ -40,7 +40,7 @@ const Categories = () => {
       ];
     
     return (
-        <div className="flex flex-col border-2 mt-10 rounded-2xl">
+        <div className="flex-cols  gap-2 md:flex-cols lg:flex-cols md:mt-24  lg:mt-24 rounded-2xl">
             
        
         {

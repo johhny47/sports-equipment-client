@@ -87,7 +87,7 @@ const Category = () => {
     
     return (
         <div >
-            <h1>Category</h1>
+          
         {
          loading ? <p>Loading...</p>:""
         }
@@ -95,7 +95,7 @@ const Category = () => {
          error ? <p>{error}</p>: ""
         }
          { 
-             <ul className="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-20">
+             <ul className="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:mt-20 lg:mt-20">
                  {products.map((equipment) => (
                     <div key={equipment._id} className="card bg-slate-300 w-64 shadow-xl">
                     <figure>

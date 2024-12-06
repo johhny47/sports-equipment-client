@@ -65,8 +65,9 @@ const Product = () => {
                         <div className="badge badge-secondary"> <p>${equipment.price}</p></div>
                       </h2>
                       <p>{equipment.description}</p>
-                      <div className="card-actions justify-end">
-                        <div className="badge badge-outline"><Link to={`/details/${equipment._id}`}><button>Details</button></Link></div>
+                      <div className="card-actions justify-start">
+                        <div className=""><Link to={`/details/${equipment._id}`}><button className="text-md font-semibold text-white
+                          bg-slate-500 px-2 py-1 border-2 rounded-lg">Details</button></Link></div>
                        
                       </div>
                     </div>

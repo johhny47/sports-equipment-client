@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, Outlet, useLoaderData } from "react-router-dom";
 
 
 const AllSportsEquipment = () => {
@@ -8,33 +8,23 @@ const AllSportsEquipment = () => {
    
     return (
         <div>
-  <div className="overflow-x-auto">
-    <table className="table">
-    {/* head */}
-    <thead>
-      <tr>
-      <th>Index</th>
-        <th>Name</th>
-        <th>Category</th>
-        <th>Price</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      {/* row 1 */}
-      {
-        data.map((data,idx) => <tr className="bg-base-200">
-             <th>{idx+1}</th>
-            <td>{data.name}</td>
-            <td>{data.category}</td>
-            <td>{data.price}</td>
-            <td><Link to={`/details/${data._id}`}><button>Details</button></Link></td>
-          </tr>)
-      }
-     
-    </tbody>
-  </table>
-</div>
+            <div className="w-full mx-auto flex justify-between mt-5">
+                  <div> 
+                    <h1 className="text-xl font-bold" >All Equipment</h1>
+                 </div>
+                  <div className="flex items-center gap-3">
+                 
+                   <div className="flex gap-2">
+                   <Link to="/allsportsequipment/sort"><button  className="flex gap-2 h-13 items-center  px-4 py-2 border-2 border-[#9538e2] text-[#9538e2] rounded-2xl font-semibold ">Sort by Price </button></Link>
+                 
+                   </div>
+                  </div>
+               
+  
+    
+                </div> 
+                <Outlet></Outlet>
+ 
         </div>
     );
 };

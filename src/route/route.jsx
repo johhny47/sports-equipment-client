@@ -10,6 +10,8 @@ import Details from "../component/Details";
 import Update from './../component/Update';
 import PrivateRoute from "../component/PrivateRoute/PrivateRoute";
 import Product from "../component/Product";
+import AllEquipmetsData from "../component/AllEquipmetsData";
+import AllEquipmentsSortData from "../component/AllEquipmentsSortData";
 
 
 const router = createBrowserRouter([
@@ -51,7 +53,19 @@ const router = createBrowserRouter([
             {
                 path:"/allsportsequipment",
                 element:<AllSportsEquipment></AllSportsEquipment>,
-                loader: ()=>fetch("http://localhost:5000/equipments")
+                loader: ()=>fetch("http://localhost:5000/equipments"),
+                children:[
+                    {
+                        path:"/allsportsequipment",
+                        element:<AllEquipmetsData></AllEquipmetsData>,
+                        loader: ()=>fetch("http://localhost:5000/equipments")
+                    },
+                    {
+                        path:"/allsportsequipment/sort",
+                        element:<AllEquipmentsSortData></AllEquipmentsSortData>,
+                        loader: ()=>fetch("http://localhost:5000/equipments/sort")
+                    }
+                ]
             },
             {
                 path:"/details/:id",

@@ -14,12 +14,14 @@ import AllEquipmetsData from "../component/AllEquipmetsData";
 import AllEquipmentsSortData from "../component/AllEquipmentsSortData";
 import Categories from "../component/Categories";
 import Category from "../component/Category";
+import ErrorPage from './../component/ErrorPage';
 
 
 const router = createBrowserRouter([
     {
         path: "/",
         element:<MainLayout></MainLayout>,
+        errorElement:<ErrorPage></ErrorPage>,
         children: [
             {
                 path: "/",

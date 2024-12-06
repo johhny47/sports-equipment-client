@@ -9,6 +9,7 @@ import AllSportsEquipment from "../page/AllSportsEquipment";
 import Details from "../component/Details";
 import Update from './../component/Update';
 import PrivateRoute from "../component/PrivateRoute/PrivateRoute";
+import Product from "../component/Product";
 
 
 const router = createBrowserRouter([
@@ -19,6 +20,13 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element:<Home></Home>,
+                
+            },
+            {
+                path: "/",
+                element:<Product></Product>,
+                loader:()=>fetch("http://localhost:5000/equipments/limit")
+               
                 
             },
             {

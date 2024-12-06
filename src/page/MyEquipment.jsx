@@ -24,7 +24,7 @@ const MyEquipment = () => {
             .then(data => {
                 setEquipmentData(data);
                 setLoading(false);
-                setMyuser(data)
+                
             })
             .catch(err => {
                 setError('Failed to load data');
@@ -55,6 +55,7 @@ const MyEquipment = () => {
                   })
                   const remaining = myuser.filter(d => d._id !== _id)
                   setMyuser(remaining)
+                  setEquipmentData(remaining);
             }
         })
     }
@@ -63,7 +64,7 @@ const MyEquipment = () => {
     
 
     return (
-        <div>
+        <div >
            {
             loading ? <p>Loading...</p>:""
            }
@@ -71,15 +72,27 @@ const MyEquipment = () => {
             error ? <p>{error}</p>: ""
            }
             {equipmentData.length > 0 ? (
-                <ul>
+                <ul className="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-20">
                     {equipmentData.map((equipment) => (
-                        <li key={equipment._id}>
-                            <h3>{equipment.name}</h3>
-                            <p>Category:{equipment.category}</p>
-                            <p>Price: ${equipment.price}</p>
-                            <Link to={`/update/${equipment._id}`} > <button>Update</button></Link>
-                            <button onClick={()=>handleDelete(equipment._id)}>Delete</button>
-                        </li>
+                       <div key={equipment._id} className="card bg-slate-300 w-80 shadow-xl">
+                       <figure>
+                         <img
+                           src={equipment.image} className="w-full h-60  "
+                           alt="Shoes" />
+                       </figure>
+                       <div className="card-body">
+                         <h2 className="card-title">
+                         {equipment.name}
+                           <div className="badge badge-secondary"> <p>${equipment.price}</p></div>
+                         </h2>
+                         <p>{equipment.description}</p>
+                         <div className="card-actions justify-end">
+                           <div className="badge badge-outline"><Link to={`/update/${equipment._id}`} > <button>Update</button></Link></div>
+                           <div className="badge badge-outline"> <button onClick={()=>handleDelete(equipment._id)}>Delete</button></div>
+                         </div>
+                       </div>
+                     </div>
+                      
                     ))}
                 </ul>
             ) : (

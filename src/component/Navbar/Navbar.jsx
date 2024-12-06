@@ -9,7 +9,7 @@ const Navbar = () => {
  
  
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-gray-400 ">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -40,18 +40,18 @@ const Navbar = () => {
              }
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className="btn btn-ghost text-3xl italic font-bold "><span className="text-red-500">SPORTS </span><span className="text-white">ZONE</span></a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
           
-              <NavLink to="/"><li><a>Home</a></li></NavLink>
-              <NavLink to="/allsportsequipment"><li><a>All Sports Equipment</a></li></NavLink>
+              <NavLink to="/"><li className="text-base font-bold text-white"><a>Home</a></li></NavLink>
+              <NavLink to="/allsportsequipment"><li className="text-base font-bold text-white"><a>All Sports Equipment</a></li></NavLink>
              {
               user && <div className="flex gap-2">
                 {/* <NavLink to={`/details/${data._id}`}><li><a>View Details</a></li></NavLink> */}
-                 <NavLink to="/addequipment"><li><a>Add Equipment</a></li></NavLink>
-                 <NavLink to="/myequipment"><li><a>My Equipment</a></li></NavLink>
+                 <NavLink to="/addequipment"><li className="text-base font-bold text-white"><a>Add Equipment</a></li></NavLink>
+                 <NavLink to="/myequipment"><li className="text-base font-bold text-white"><a>My Equipment</a></li></NavLink>
               </div>
              }
              

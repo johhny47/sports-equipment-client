@@ -1,6 +1,9 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { authContext } from "../AuthProvider/AuthProvider";
+import Tooltip from "./Tooltip";
+
+
 
 
 const Navbar = () => {
@@ -70,8 +73,16 @@ const Navbar = () => {
            </div>
             
           <div className="user-container ">
-          <img src= {user.photoURL} alt="" className="h-10 w-10 rounded-full border-2 border-red-500 " />
+          {/* <img src= {user.photoURL} alt="" className="h-10 w-10 rounded-full border-2 border-red-500 " /> */}
           {/* <div className="user-name">{user.displayName}</div> */}
+          <div className="">
+      <Tooltip text={`${user.displayName}`}>
+        <button className="">
+        <img src= {user.photoURL} alt="" className="h-10 w-10 rounded-full border-2 border-red-500 " />
+        </button>
+      </Tooltip>
+    </div>
+        
           </div>
  
          </div>

@@ -20,87 +20,87 @@ import ErrorPage from './../component/ErrorPage';
 const router = createBrowserRouter([
     {
         path: "/",
-        element:<MainLayout></MainLayout>,
-        errorElement:<ErrorPage></ErrorPage>,
+        element: <MainLayout></MainLayout>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: "/",
-                element:<Home></Home>,
-                children:[
+                element: <Home></Home>,
+                children: [
                     {
-                        path:"equipments/category/:category",
-                        element:<Category></Category> ,
-                       
-                       
+                        path: "equipments/category/:category",
+                        element: <Category></Category>,
+
+
                     }
                 ]
-                
-            },
-            {
-                path: "/",
-                element:<Product></Product>,
-                loader:()=>fetch("http://localhost:5000/equipments/limit")
-               
-                
-            },
-            {
-                path: "/",
-                element:<Categories></Categories>,
-               
-               
-                
-            },
-            {
-                path:"/register",
-                element:<Register></Register>
-            },
-            {
-                path:"/login",
-                element:<Login></Login>
-            },
-            {
-                path:"/addequipment",
-                element:<PrivateRoute><AddEquipment></AddEquipment></PrivateRoute>
-            },
-            {
-                path:"/myequipment",
-                element:<PrivateRoute><MyEquipment></MyEquipment></PrivateRoute>,
-                
-               
 
             },
             {
-                path:"/allsportsequipment",
-                element:<AllSportsEquipment></AllSportsEquipment>,
-                loader: ()=>fetch("http://localhost:5000/equipments"),
-                children:[
+                path: "/",
+                element: <Product></Product>,
+                loader: () => fetch("https://sports-equipment-server-seven.vercel.app/equipments/limit")
+
+
+            },
+            {
+                path: "/",
+                element: <Categories></Categories>,
+
+
+
+            },
+            {
+                path: "/register",
+                element: <Register></Register>
+            },
+            {
+                path: "/login",
+                element: <Login></Login>
+            },
+            {
+                path: "/addequipment",
+                element: <PrivateRoute><AddEquipment></AddEquipment></PrivateRoute>
+            },
+            {
+                path: "/myequipment",
+                element: <PrivateRoute><MyEquipment></MyEquipment></PrivateRoute>,
+
+
+
+            },
+            {
+                path: "/allsportsequipment",
+                element: <AllSportsEquipment></AllSportsEquipment>,
+                loader: () => fetch("https://sports-equipment-server-seven.vercel.app/equipments"),
+                children: [
                     {
-                        path:"/allsportsequipment",
-                        element:<AllEquipmetsData></AllEquipmetsData>,
-                        loader: ()=>fetch("http://localhost:5000/equipments")
+                        path: "/allsportsequipment",
+                        element: <AllEquipmetsData></AllEquipmetsData>,
+                        loader: () => fetch("https://sports-equipment-server-seven.vercel.app/equipments")
                     },
                     {
-                        path:"/allsportsequipment/sort",
-                        element:<AllEquipmentsSortData></AllEquipmentsSortData>,
-                        loader: ()=>fetch("http://localhost:5000/equipments/sort")
+                        path: "/allsportsequipment/sort",
+                        element: <AllEquipmentsSortData></AllEquipmentsSortData>,
+                        loader: () => fetch("https://sports-equipment-server-seven.vercel.app/equipments/sort")
                     }
                 ]
             },
             {
-                path:"/details/:id",
-                element:<PrivateRoute><Details></Details></PrivateRoute>,
-                loader: ({params})=>fetch(`http://localhost:5000/equipments/details/${params.id}`)
+                path: "/details/:id",
+                element: <PrivateRoute><Details></Details></PrivateRoute>,
+                loader: ({ params }) => fetch(`https://sports-equipment-server-seven.vercel.app/equipments/details/${params.id}`)
             },
             {
-                path:"/update/:id",
-                element:<PrivateRoute><Update></Update></PrivateRoute>,
-                loader: ({params})=>fetch(`http://localhost:5000/equipments/update/${params.id}`)
-               
+                path: "/update/:id",
+                element: <PrivateRoute><Update></Update></PrivateRoute>,
+                loader: ({ params }) => fetch(`https://sports-equipment-server-seven.vercel.app/equipments/update/${params.id}`)
+
             }
-           
+
         ]
-       
-       
+
+
     }
 
 ])

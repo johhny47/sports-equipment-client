@@ -13,7 +13,7 @@ const Categories = () => {
     useEffect(() => {
         {
           
-            fetch(`http://localhost:5000/equipments`, {
+            fetch(`https://sports-equipment-server-seven.vercel.app/equipments`, {
                 method: 'GET', 
                 headers: {
                     'Content-Type': 'application/json',

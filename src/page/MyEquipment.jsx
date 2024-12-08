@@ -14,7 +14,7 @@ const MyEquipment = () => {
     useEffect(() => {
         if (userEmail) {
           
-            fetch(`http://localhost:5000/equipments/search?userEmail=${userEmail}`, {
+            fetch(`https://sports-equipment-server-seven.vercel.app/equipments/search?userEmail=${userEmail}`, {
                 method: 'GET', 
                 headers: {
                     'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ const MyEquipment = () => {
     const handleDelete = _id =>{
         console.log(myuser)
 
-        fetch(`http://localhost:5000/equipments/${_id}`,{
+        fetch(`https://sports-equipment-server-seven.vercel.app/equipments/${_id}`,{
             method: 'DELETE',
            })
         .then(res => res.json())
@@ -65,12 +65,15 @@ const MyEquipment = () => {
 
     return (
         <div >
-           {
-            loading ? <p>Loading...</p>:""
+          <div className="h-5 w-10 mx-auto">
+          {
+            loading ? <span className="loading loading-spinner loading-lg"></span>
+            :""
            }
            {
             error ? <p>{error}</p>: ""
            }
+          </div>
             {equipmentData.length > 0 ? (
                 <ul className="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-20">
                     {equipmentData.map((equipment) => (
@@ -96,7 +99,7 @@ const MyEquipment = () => {
                     ))}
                 </ul>
             ) : (
-                <p>No equipment found for this email.</p>
+                <p></p>
             )}
         </div>
     );

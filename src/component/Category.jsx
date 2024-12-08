@@ -12,7 +12,7 @@ const Category = () => {
     useEffect(() => {
         {
           
-            fetch(`http://localhost:5000/equipments`, {
+            fetch(`https://sports-equipment-server-seven.vercel.app/equipments`, {
                 method: 'GET', 
                 headers: {
                     'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ const Category = () => {
     useEffect(() => {
         {
           
-            fetch(`http://localhost:5000/equipments/category/${products}`, {
+            fetch(`https://sports-equipment-server-seven.vercel.app/equipments/category/${products}`, {
                 method: 'GET', 
                 headers: {
                     'Content-Type': 'application/json',
@@ -89,7 +89,8 @@ const Category = () => {
         <div >
           
         {
-         loading ? <p>Loading...</p>:""
+         loading ? <span className="loading loading-spinner loading-lg"></span>
+         :""
         }
         {
          error ? <p>{error}</p>: ""

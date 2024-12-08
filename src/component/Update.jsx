@@ -26,7 +26,7 @@ const Update = () => {
        
        
         
-        fetch(`http://localhost:5000/equipments/${data._id}`,{
+        fetch(`https://sports-equipment-server-seven.vercel.app/equipments/${data._id}`,{
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

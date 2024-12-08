@@ -29,7 +29,7 @@ const handleAddEquipment = (e) =>{
    
     console.log(allEquipment)
     
-    fetch('http://localhost:5000/equipments',{
+    fetch('https://sports-equipment-server-seven.vercel.app/equipments',{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

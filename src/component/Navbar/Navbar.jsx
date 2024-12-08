@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { authContext } from "../AuthProvider/AuthProvider";
 import Tooltip from "./Tooltip";
+import Banner from "../Banner/Banner";
+import { Bounce } from "react-awesome-reveal";
 
 
 
@@ -43,7 +45,10 @@ const Navbar = () => {
              }
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl md:text-3xl lg:text-3xl italic font-bold -ml-7 md:ml-0 lg:ml-0"><span className="text-red-500">SPORTS </span><span className="text-white">ZONE</span></a>
+          <a className="btn btn-ghost text-xl md:text-3xl lg:text-3xl italic font-bold -ml-7 md:ml-0 lg:ml-0"><span className="text-red-500">SPORTS </span>
+          <Bounce delay={200}>
+          <span className="text-white">ZONE</span>
+            </Bounce></a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -73,9 +78,8 @@ const Navbar = () => {
            </div>
             
           <div className="user-container ">
-          {/* <img src= {user.photoURL} alt="" className="h-10 w-10 rounded-full border-2 border-red-500 " /> */}
-          {/* <div className="user-name">{user.displayName}</div> */}
-          <div className="">
+         
+          <div>
       <Tooltip text={`${user.displayName}`}>
         <button className="">
         <img src= {user.photoURL} alt="" className="h-10 w-10 rounded-full border-2 border-red-500 " />
@@ -89,6 +93,7 @@ const Navbar = () => {
          :<div className="flex gap-1 lg:gap-4 md:gap-4"> <NavLink to="/register"><a className="btn btn-xs  md:btn-error lg:btn-error">Register</a></NavLink>
               <NavLink to="/login"><a className="btn btn-xs  md:btn-error lg:btn-error">Login</a></NavLink></div>}
         </div>
+       
       </div>
     );
 };

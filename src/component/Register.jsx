@@ -21,7 +21,7 @@ const Register = () => {
         handleRegister(email,password)
         .then(res=>{
           const user={name,email}
-          fetch('http://localhost:5000/user',{
+          fetch('https://sports-equipment-server-seven.vercel.app/user',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -11,7 +11,7 @@ const Product = () => {
     useEffect(() => {
          {
           
-            fetch(`http://localhost:5000/equipments/limit`, {
+            fetch(`https://sports-equipment-server-seven.vercel.app/equipments/limit`, {
                 method: 'GET', 
                 headers: {
                     'Content-Type': 'application/json',

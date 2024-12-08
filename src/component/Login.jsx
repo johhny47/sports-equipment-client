@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "./AuthProvider/AuthProvider";
 import Swal from 'sweetalert2'
@@ -8,6 +8,7 @@ import Swal from 'sweetalert2'
 
 const Login = () => {
   const navigate = useNavigate()
+  const [error,setError] = useState()
   const {handleGoogleLogin,handleLogin} = useContext(authContext);
   const handleSubmit =(e)=>{
     e.preventDefault();
@@ -20,17 +21,20 @@ const Login = () => {
             title: 'Successful!',
             text: 'Successfully logged in',
             icon: 'success',
-            confirmButtonText: 'Cool'
+            confirmButtonText: 'ok'
           })
+          navigate("/")
+         
         })
         .catch(err=>
+         
+          Swal.fire({
+            title: 'Error!',
+            text: `${err.message}`,
+            icon: 'error',
+            confirmButtonText: 'ok'
+          })
        
-        Swal.fire({
-          title: 'Error!',
-          text: `Do you want to continue ${err.message}`,
-          icon: 'error',
-          confirmButtonText: 'Cool'
-        })
       )
         if(password.length < 6){
           setError("password must contain at least 6 charcter")
@@ -49,13 +53,11 @@ const Login = () => {
         e.target.reset()
       }
       else{
-        navigate("/")
-        toast("Successfully login");
        
        
+       }}
+
       
-       
-  }}
 
     return (
         <div className="hero bg-base-200 min-h-screen ">

@@ -4,6 +4,7 @@ import { authContext } from "../AuthProvider/AuthProvider";
 import Tooltip from "./Tooltip";
 import Banner from "../Banner/Banner";
 import { Bounce } from "react-awesome-reveal";
+import "./navbar.css"
 
 
 

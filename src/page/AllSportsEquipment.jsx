@@ -10,7 +10,7 @@ const AllSportsEquipment = () => {
         <div>
             <div className="w-full mx-auto flex justify-between mt-5">
                   <div> 
-                    <h1 className="text-xl font-bold mt-4" >All Equipment</h1>
+                    <h1 className="text-xl font-bold mt-4" >All Equipments</h1>
                  </div>
                   <div className="flex items-center gap-3">
                  

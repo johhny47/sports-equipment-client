@@ -1,8 +1,21 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Sports Zone 
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+ 
+
+
+## 🔗 Links
+Live Website Link : https://assignment10-e2e4f.web.app/myequipment
+
+
+
+
+### 5 features of my Website.
+- You can add Equipment
+- You can update and delete Equipment 
+- You will able to see all equipment
+by clicking All Sports Equipment 
+- Also you can change theme
+- you can sort all equipment list in price by clicking sort by price button

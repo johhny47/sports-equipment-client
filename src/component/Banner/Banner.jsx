@@ -15,7 +15,7 @@ const Banner = () => {
 
 
     return (
-        <div className='h-[700px] md:h-[600px] lg:h-[600px]'>
+        <div className='h-[450px] md:h-[600px] lg:h-[600px]'>
           {
              <Swiper
              modules={[Navigation, Pagination, Scrollbar, A11y]}

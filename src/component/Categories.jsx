@@ -46,7 +46,7 @@ const Categories = () => {
         {
           
 
-          uniqueCategories.map((category =>  <NavLink key={category._id} to={`equipments/category/${category}`} role="tab" className={({isActive})=>`tab border-2 w-full md:w-20  lg:w-24 mx-auto rounded-2xl my-2 ${isActive?'tab-active bg-[#9538e2] text-white':''}`}>
+          uniqueCategories.map((category =>  <NavLink key={category._id} to={`equipments/category/${category}`} role="tab" className={({isActive})=>`tab border-2 w-full md:w-20  lg:w-24 mx-auto rounded-2xl my-2 ${isActive?'tab-active bg-[#9538e2]  dark:text-black  dark:bg-red-300 text-white':''}`}>
             
             {category}
             

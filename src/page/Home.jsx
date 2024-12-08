@@ -3,15 +3,21 @@ import Categories from "../component/Categories";
 import Product from "../component/Product";
 import { Bounce, Fade } from "react-awesome-reveal";
 import Banner from "../component/Banner/Banner";
+import { useState } from "react";
 
 
 
 const Home = () => {
    
+
+
+   
     return (
-       <div  className="w-full">
+       <div  className="w-full ">
+         
+
         <Banner></Banner>
-         <div className="w-11/12">
+         <div className="w-11/12 mx-auto">
           
           
           <Product></Product>

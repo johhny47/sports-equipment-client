@@ -98,7 +98,7 @@ const Category = () => {
          { 
              <ul className="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:mt-20 lg:mt-20">
                  {products.map((equipment) => (
-                    <div key={equipment._id} className="card bg-slate-300 w-64 shadow-xl">
+                    <div key={equipment._id} className="card bg-slate-300  dark:bg-red-300 w-60 shadow-xl">
                     <figure>
                       <img
                         src={equipment.image} className="w-full h-60  "

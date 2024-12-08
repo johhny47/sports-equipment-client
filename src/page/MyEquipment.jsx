@@ -64,7 +64,7 @@ const MyEquipment = () => {
     
 
     return (
-        <div >
+        <div>
           <div className="h-5 w-10 mx-auto">
           {
             loading ? <span className="loading loading-spinner loading-lg"></span>

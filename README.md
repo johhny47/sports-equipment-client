@@ -13,6 +13,7 @@ The goal of the website is to foster a community where users can find high-quali
 
 ## 🔗 Links
 Live Website Link: https://assignment10-e2e4f.web.app/myequipment
+Back-end Repo Link: https://github.com/johhny47/sports-equipment-Server
 ## 🚀 Technologies used for front-end
 
 <p align="center">
@@ -27,7 +28,7 @@ Live Website Link: https://assignment10-e2e4f.web.app/myequipment
 ## 🚀 Technologies used for back-end
 
 <p align="center">
-    < <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" alt="Node.js" width="40" height="40"/>
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" alt="Node.js" width="40" height="40"/>
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg" alt="Express.js" width="40" height="40"/>
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="40" height="40"/>
 </p>

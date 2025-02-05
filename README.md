@@ -95,13 +95,31 @@ To install and set up the project locally, follow these steps:
 1. **Clone this repository**:
    ```bash
    git clone https://github.com/yourusername/sports-equipment-platform.git
-2. **Navigate into the project directory:**   
- ```bash
- cd sports-equipment-platform
-3. **Install the necessary dependencies:**   
- ```bash
+Navigate into the project directory:
+bash
+Copy
+Edit
+cd sports-equipment-platform
+Install the necessary dependencies:
+bash
+Copy
+Edit
 npm install
-4. **Start the development server:**
-```bash
+Start the development server:
+bash
+Copy
+Edit
 npm start
+Now you can view the platform in your browser at http://localhost:3000.
+sql
+Copy
+Edit
+
+This ensures the code blocks are correctly formatted, preventing any errors when displaying the README file. Let me know if you need further changes! 🚀
+
+
+
+
+
+
 
